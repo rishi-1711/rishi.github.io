@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Registration</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .login-container {
+            width: 100px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: rgb(86, 6, 86);
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            width: 100%;
+            margin-bottom: 10px; /* Add margin-bottom for spacing */
+        }
+
+        button:hover {
+            background-color: black;
+        }
+
+        .registration-container {
+            margin-top: 20px;
+        }
+
+        .registration-container label {
+            display: block;
+            margin-top: 10px;
+        }
+
+        .secret-key {
+            margin-top: 20px;
+            font-weight: bold;
+            color:red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="registration-container">
+        <h2>Registration</h2>
+        <form action="#" method="post" onsubmit="return validateForm()">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" pattern="[a-zA-Z]+" required>
+
+            <label for="mobile">Mobile Number:</label>
+            <input type="tel" id="mobile" name="mobile" pattern="[0-9]{10}" required>
+
+            <label for="address1">Address Line 1:</label>
+            <input type="text" id="address1" name="address1" required>
+
+            <label for="address2">Address Line 2:</label>
+            <input type="text" id="address2" name="address2">
+
+            <label for="country">Country:</label>
+            <input type="text" id="country" name="country" pattern="[a-zA-Z]+" required>
+
+            <label for="pincode">Pincode:</label>
+            <input type="text" id="pincode" name="pincode" pattern="[0-9]{5}" required>
+
+            <label for="date"> Date of birth:</label>
+            <input type="date" id="date" name="date" required>
+
+           
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+    <script>
+        function validateForm() {
+            // Add any additional client-side validation if needed
+            return true;
+        }
+    </script>
+</body>
+
+</html>
