@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Current Date</title>
+  <style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    .container {
+        max-width: 600px;
+        margin: 50px auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    label {
+        font-weight: bold;
+    }
+
+    input[type="number"] {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-sizing: border-box;
+    }
+
+    button {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: none;
+        border-radius: 5px;
+        background-color: rgb(86, 6, 86);
+        color: #fff;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background-color: rgb(86, 6, 86);
+    }
+
+    .result-box {
+        margin-top: 20px;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        background-color: #f9f9f9;
+    }
+</style>
+  <script>
+    function getCurrentDate() {
+      var currentDate = new Date();
+      var day = currentDate.getDate();
+      var month = currentDate.getMonth() + 1;
+      var year = currentDate.getFullYear();
+
+      var mmddyy = month + "-" + day + "-" + year.toString().substr(-2);
+      var mmddyy_slash = month + "/" + day + "/" + year.toString().substr(-2);
+      var ddmmyy = day + "-" + month + "-" + year.toString().substr(-2);
+      var ddmmyy_slash = day + "/" + month + "/" + year.toString().substr(-2);
+
+      document.getElementById("output").innerHTML = "mm-dd-yy: " + mmddyy + "<br>mm/dd/yy: " + mmddyy_slash + "<br>dd-mm-yy: " + ddmmyy + "<br>dd/mm/yy: " + ddmmyy_slash;
+    }
+  </script>
+</head>
+<body>
+  <button onclick="getCurrentDate()">Get Current Date</button>
+  <p id="output"></p>
+</body>
+</html>

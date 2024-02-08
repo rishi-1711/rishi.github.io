@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Checker</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: rgb(86, 6, 86);
+            color: #fff;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: rgb(86, 6, 86);
+        }
+
+        .result-box {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Number Checker</h2>
+
+    <label for="inputNumber">Enter a positive number: </label>
+    <input type="number" id="inputNumber" placeholder="Enter a number">
+
+    <button onclick="checkNumber()">Check</button>
+
+    <p id="result"></p>
+
+    <script>
+        function checkNumber() {
+            // Get user input
+            var inputNumber = parseInt(document.getElementById('inputNumber').value);
+
+            // Check if the input is valid
+            if (isNaN(inputNumber) || inputNumber <= 0) {
+                alert('Please enter a valid positive number.');
+                return;
+            }
+
+            // Check if the number is a multiple of 3 or 7
+            var isMultipleOf3 = inputNumber % 3 === 0;
+            var isMultipleOf7 = inputNumber % 7 === 0;
+
+            // Display the result
+            if (isMultipleOf3 || isMultipleOf7) {
+                document.getElementById('result').innerHTML = inputNumber + ' is a multiple of 3 or 7.';
+            } else {
+                document.getElementById('result').innerHTML = inputNumber + ' is not a multiple of 3 or 7.';
+            }
+        }
+    </script>
+</body>
+
+</html>
